@@ -1,13 +1,8 @@
 {
     "LABEL": {
-      "name": "title needs formatting",
-      "color": "EEEEEE"
     },
     "CHECKS": {
-      "prefixes": ["fix: ", "feat: ", "docs: ", "chore: ", "style: ", "refactor: ", "perf: ", "test: ", "revert: "],
-      "regexp": "docs\\(v[0-9]\\): ",
-      "regexpFlags": "i",
-      "ignoreLabels" : ["dont-check-PRs-with-this-label", "meta"]
+      "prefixes": ["fix: ", "feat: ", "docs: ", "chore: ", "style: ", "refactor: ", "perf: ", "test: ", "revert: "]
     },
     "MESSAGES": {
       "success": "All OK",
