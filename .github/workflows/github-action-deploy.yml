@@ -1,0 +1,30 @@
+name: Deploy Test
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+      branches: [main, master, develop]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 14, 16, 18 ]
+    name: Node ${{ matrix.node }} sample
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
